@@ -3,13 +3,13 @@ version: '3.8'
 services:
   tomcat-server:
     build: .
-    container_name: tomcat-estante-virtual
+    container_name: tomcat-network-services
     ports:
-      - "8080:8080" # Porta HTTP padrão
-      - "8443:8443" # Porta HTTPS (usaremos na Fase 3)
+      - "8080:8080"
+      - "8443:8443"
     volumes:
       - ./webapps:/usr/local/tomcat/webapps
       - ./logs:/usr/local/tomcat/logs
-      # O volume de conf/ será mapeado mais tarde, quando formos customizar o HTTPS e usuários.
+  
     environment:
-      - TZ=America/Sao_Paulo # Ajusta o fuso horário dos logs
+      - TZ=America/Sao_Paulo
