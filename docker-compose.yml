@@ -7,10 +7,9 @@ services:
     ports:
       - "8080:8080"
       - "8443:8443"
-    volumes:
-      - ./webapps:/usr/local/tomcat/webapps
-      - ./logs:/usr/local/tomcat/logs
-      - ./conf:/usr/local/tomcat/conf
-  
+    # volumes:
+    #   - ./webapps:/opt/tomcat/webapps
+    #   - ./logs:/opt/tomcat/logs
+    #   - ./conf:/opt/tomcat/conf
     environment:
       - TZ=America/Sao_Paulo
