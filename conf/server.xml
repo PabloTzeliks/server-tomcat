@@ -72,6 +72,7 @@
                redirectPort="8443"
                maxParameterCount="1000"
                />
+     
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -81,6 +82,14 @@
                maxParameterCount="1000"
                />
     -->
+
+     <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS"
+               keystoreFile="conf/keystore.p12"
+               keystorePass="senha123"
+               keystoreType="PKCS12" />
+
     <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443 with HTTP/2
          This connector uses the NIO implementation. The default
          SSLImplementation will depend on the presence of the APR/native
